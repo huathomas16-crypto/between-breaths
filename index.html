@@ -136,9 +136,11 @@ figure img{width:100%;height:100%;object-fit:cover}
 .final{max-width:none;padding-left:0;padding-right:0}
 .final .head{max-width:var(--max);margin:0 auto 64px;padding:0 var(--g)}
 .final .bleed{aspect-ratio:3/2;max-height:100svh;width:100%}
-.final .pair{max-width:var(--max);margin:clamp(12px,1.6vw,24px) auto 0;padding:0 var(--g);display:grid;grid-template-columns:2fr 3fr;gap:clamp(12px,1.6vw,24px)}
-.final .pair figure:first-child{aspect-ratio:2/3}
-@media (max-width:860px){.final .pair{grid-template-columns:1fr}}
+/* two upright 2:3 shots + one 3:2 room shot; 4fr:4fr:9fr keeps all three the same height */
+.final .trio{max-width:var(--max);margin:clamp(12px,1.6vw,24px) auto 0;padding:0 var(--g);display:grid;grid-template-columns:4fr 4fr 9fr;gap:clamp(12px,1.6vw,24px)}
+.final .trio figure{aspect-ratio:2/3}
+.final .trio figure:last-child{aspect-ratio:3/2}
+@media (max-width:860px){.final .trio{grid-template-columns:1fr 1fr}.final .trio figure:last-child{grid-column:1/-1}}
 
 /* reflection */
 .refl .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(32px,5vw,80px);margin-top:96px;border-top:1px solid var(--line);padding-top:40px}
@@ -291,9 +293,10 @@ footer .n{font-size:13px;letter-spacing:.24em;text-transform:uppercase}
 <section class="final" id="s9">
   <div class="head"><h2 class="rv">Final Design</h2></div>
   <figure class="bleed open"><img src="assets/img/image33.jpg" alt="" loading="lazy"></figure>
-  <div class="pair">
+  <div class="trio">
     <figure class="open"><img src="assets/img/image32.jpg" alt="" loading="lazy"></figure>
-    <figure class="open"><img src="assets/img/image1.jpg" alt="" loading="lazy"></figure>
+    <figure class="open"><img src="assets/img/room-closed.webp" alt="" loading="lazy"></figure>
+    <figure class="open"><img src="assets/img/room-open.webp" alt="" loading="lazy"></figure>
   </div>
 </section>
 
